@@ -16,7 +16,7 @@ public class CitaMedica {
         this.paciente = Validaciones.requerido(paciente, "El paciente es obligatorio");
         this.doctor = Validaciones.requerido(doctor, "El doctor es obligatorio");
         this.especialidad = Validaciones.requerido(especialidad, "La especialidad es obligatoria");
-        this.fechaHora = fechaHora;
+        this.fechaHora = Validaciones.requerido(fechaHora, "La fecha y hora son obligatorias");
         this.motivo = motivo;
         this.estado = estado;
     }
