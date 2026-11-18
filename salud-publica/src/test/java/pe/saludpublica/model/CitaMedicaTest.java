@@ -128,6 +128,28 @@ class CitaMedicaTest {
         assertEquals(estado, cita.getEstado());
     }
 
+    @Test
+    @DisplayName("CIT-008: Verificar atributos después de construir el objeto")
+    void shouldKeepAttributesAfterConstruction() {
+        LocalDateTime otraFecha = LocalDateTime.of(2027, 1, 15, 14, 0);
+
+        CitaMedica cita = new CitaMedica(
+                "pac-9",
+                "doc-9",
+                "esp-9",
+                otraFecha,
+                "Control anual",
+                EstadoCita.ATENDIDA
+        );
+
+        assertEquals("pac-9", cita.getPaciente());
+        assertEquals("doc-9", cita.getDoctor());
+        assertEquals("esp-9", cita.getEspecialidad());
+        assertEquals(otraFecha, cita.getFechaHora());
+        assertEquals("Control anual", cita.getMotivo());
+        assertEquals(EstadoCita.ATENDIDA, cita.getEstado());
+    }
+
 
 
 }
