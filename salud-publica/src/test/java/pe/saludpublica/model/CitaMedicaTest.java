@@ -2,7 +2,8 @@ package pe.saludpublica.model;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -110,5 +111,23 @@ class CitaMedicaTest {
 
         assertEquals(EstadoCita.PROGRAMADA, cita.getEstado());
     }
+
+    @ParameterizedTest
+    @EnumSource(EstadoCita.class)
+    @DisplayName("CIT-007: Conservar un estado válido")
+    void shouldKeepProvidedStatus(EstadoCita estado) {
+        CitaMedica cita = new CitaMedica(
+                "pac-1",
+                "doc-1",
+                "esp-1",
+                FECHA,
+                "Dolor de cabeza",
+                estado
+        );
+
+        assertEquals(estado, cita.getEstado());
+    }
+
+
 
 }
