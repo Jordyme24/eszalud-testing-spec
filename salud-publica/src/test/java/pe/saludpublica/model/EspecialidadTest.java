@@ -31,4 +31,16 @@ class EspecialidadTest {
                 )
         );
     }
+
+    @Test
+    @DisplayName("ESP-003: Verificar atributos después de construir el objeto")
+    void shouldKeepAttributesAfterConstruction() {
+        Especialidad especialidad = new Especialidad(
+                "Pediatría",
+                "Atención infantil"
+        );
+
+        assertEquals("Pediatría", especialidad.getNombre());
+        assertEquals("Atención infantil", especialidad.getDescripcion());
+    }
 }
