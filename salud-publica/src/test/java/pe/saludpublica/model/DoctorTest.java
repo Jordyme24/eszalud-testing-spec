@@ -71,5 +71,22 @@ class DoctorTest {
         );
     }
 
+    @Test
+    @DisplayName("DOC-005: Rechazar doctor sin colegiatura")
+    void shouldRejectDoctorWithoutLicense() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new Doctor(
+                        "40123456",
+                        "Carlos",
+                        "Ramírez",
+                        null,
+                        "esp-01"
+                )
+        );
+    }
+
+
+
 
 }
