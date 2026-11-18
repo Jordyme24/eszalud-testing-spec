@@ -13,7 +13,7 @@ public class Doctor {
         this.documento = Validaciones.requerido(documento, "El documento es obligatorio");
         this.nombres = Validaciones.requerido(nombres, "Los nombres son obligatorios");
         this.apellidos = Validaciones.requerido(apellidos, "Los apellidos son obligatorios");
-        this.colegiatura = colegiatura;
+        this.colegiatura = Validaciones.requerido(colegiatura, "La colegiatura es obligatoria");
         this.especialidad = especialidad;
     }
 
