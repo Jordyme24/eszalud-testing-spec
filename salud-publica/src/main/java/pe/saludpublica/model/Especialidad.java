@@ -6,7 +6,7 @@ public class Especialidad {
     private final String descripcion;
 
     public Especialidad(String nombre, String descripcion) {
-        this.nombre = nombre;
+        this.nombre = Validaciones.requerido(nombre, "El nombre es obligatorio");
         this.descripcion = descripcion;
     }
 
