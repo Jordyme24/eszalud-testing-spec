@@ -86,7 +86,21 @@ class DoctorTest {
         );
     }
 
+    @Test
+    @DisplayName("DOC-006: Verificar atributos después de construir el objeto")
+    void shouldKeepAttributesAfterConstruction() {
+        Doctor doctor = new Doctor(
+                "40999888",
+                "María",
+                "Torres",
+                "CMP-99999",
+                "esp-02"
+        );
 
-
-
+        assertEquals("40999888", doctor.getDocumento());
+        assertEquals("María", doctor.getNombres());
+        assertEquals("Torres", doctor.getApellidos());
+        assertEquals("CMP-99999", doctor.getColegiatura());
+        assertEquals("esp-02", doctor.getEspecialidad());
+    }
 }
