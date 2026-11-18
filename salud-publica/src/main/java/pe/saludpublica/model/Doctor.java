@@ -12,7 +12,7 @@ public class Doctor {
                   String colegiatura, String especialidad) {
         this.documento = Validaciones.requerido(documento, "El documento es obligatorio");
         this.nombres = Validaciones.requerido(nombres, "Los nombres son obligatorios");
-        this.apellidos = apellidos;
+        this.apellidos = Validaciones.requerido(apellidos, "Los apellidos son obligatorios");
         this.colegiatura = colegiatura;
         this.especialidad = especialidad;
     }
