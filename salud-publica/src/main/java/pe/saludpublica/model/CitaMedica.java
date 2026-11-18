@@ -14,7 +14,7 @@ public class CitaMedica {
     public CitaMedica(String paciente, String doctor, String especialidad,
                       LocalDateTime fechaHora, String motivo, EstadoCita estado) {
         this.paciente = Validaciones.requerido(paciente, "El paciente es obligatorio");
-        this.doctor = doctor;
+        this.doctor = Validaciones.requerido(doctor, "El doctor es obligatorio");
         this.especialidad = especialidad;
         this.fechaHora = fechaHora;
         this.motivo = motivo;
