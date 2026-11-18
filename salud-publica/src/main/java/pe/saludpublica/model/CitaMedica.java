@@ -18,7 +18,7 @@ public class CitaMedica {
         this.especialidad = Validaciones.requerido(especialidad, "La especialidad es obligatoria");
         this.fechaHora = Validaciones.requerido(fechaHora, "La fecha y hora son obligatorias");
         this.motivo = motivo;
-        this.estado = estado;
+        this.estado = (estado == null) ? EstadoCita.PROGRAMADA : estado;
     }
 
     public String getPaciente() { return paciente; }
